@@ -1,0 +1,24 @@
+.footer {
+  position: relative;
+  background-image: url("./../images/footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 260px;
+  bottom: 0;
+
+  &__logo {
+    position: absolute;
+    height: 76px;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media(max-width: 320px) {
+    & {
+      width: #{$small-content-width};
+      padding: 0 #{$small-content-padding};
+    }
+  }
+}

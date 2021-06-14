@@ -1,0 +1,108 @@
+html {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #{$c-gray};
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited {
+  font-weight: normal;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #{$blue-color};
+  text-decoration-thickness: 2px;
+}
+
+h2.page-title-2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  color: #000;
+
+  @media(max-width: 768px) {
+    &__info,
+    &__title {
+      padding: 25px 20px 0;
+    }
+  }
+}
+
+h3.page-title-3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #{$blue-color};
+}
+
+.page-text {
+  font-size: 16px;
+  line-height: 27px;
+  color: #3e3e3e;
+}
+
+.page-blue-text {
+  color: #{$blue-color};
+}
+
+.page-gray-text {
+  font-size: 14px;
+  line-height: 27px;
+  color: #9fadc2;
+}
+
+.title-decoration {
+  width: 23px;
+  height: 16px;
+  margin: 0 auto;
+  background-image: url("./../images/icons/crown-reverse.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  background: #{$page-blocks-bgcolor};
+  width: #{$page-content-width};
+
+  &__information,
+  &__gallery,
+  &__testimonials,
+  &__contacts {
+    padding: 0 #{$content-padding};
+  }
+ 
+  @media(max-width: 768px) {
+    &__information,
+    &__gallery,
+    &__testimonials,
+    &__contacts {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  h2.page-title-2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}

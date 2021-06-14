@@ -1,0 +1,62 @@
+.testimonials {
+  padding-top: $page-blocks-top-indent;
+  text-align: center;
+ 
+  &__cards {
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @media(max-width: 768px) {
+    & {
+      padding-top: 64px;
+    }
+
+    &__cards {
+      padding-top: 37px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__cards > * {
+      width: 70%;
+      margin: 20px 0;
+    }
+  }
+
+  @media(max-width: 320px) {
+    &__cards {
+      padding-top: 40px;
+    }
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 240px;
+  align-items: center;
+  transition: transform 1s linear;
+
+  &__portret {
+    border-radius: 50%;
+    width: 153px;
+  }
+
+  &__position,
+  &__name {
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__position,
+  &__description {
+    margin: 0;
+  }
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}

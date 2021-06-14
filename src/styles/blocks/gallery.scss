@@ -1,0 +1,135 @@
+.gallery {
+  padding-top: $page-blocks-top-indent;
+  text-align: center;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 256px 91px);
+    column-gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  &__content > div > img.gallery__img {
+    border-radius: 8px;
+    transition: transform 500ms linear;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  @for $i from 1 through 3 {
+    &__sign-#{$i} {
+      text-align: left;
+      margin-top: 24px;
+    }
+  }
+
+  &__pic-1 {
+    grid-area: 1 / 1 / span 1 / span 3;
+  }
+
+  &__pic-2 {
+    grid-area: 1 / 4;
+  }
+
+  &__sign-1 {
+    grid-area: 2 / 1 / span 1 / span 4;
+  }
+
+  &__pic-3 {
+    grid-area: 3/ 1/ span 1/span 2;
+  }
+
+  &__pic-4 {
+    grid-area: 3/ 3/ span 1/span 2;
+  }
+
+  &__sign-2 {
+    grid-area: 4 / 1 / span 1 / span 4;
+  }
+
+  &__pic-5 {
+    grid-area: 5 / 1 / span 1 / span 1;
+  }
+
+  &__pic-6 {
+    grid-area: 5 / 2 / span 1 / span 3;
+  }
+
+  &__sign-3 {
+    grid-area: 6 / 1 / span 1 / span 4;
+  }
+
+  @media(max-width: 768px) {
+    & {
+      padding-top: 64px;
+    }
+
+    & .btn {
+      width: 100%;
+    }
+
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, minmax(131px, auto) minmax(75px, auto));
+      padding-bottom: 0;
+    }
+
+    @for $i from 1 through 3 {
+      &__sign-#{$i} {
+        margin-top: 16px;
+      }
+    }
+
+    &__pic-1 {
+      grid-area: 1 / 1;
+    }
+  
+    &__pic-2 {
+      grid-area: 1 / 2;
+    }
+  
+    &__sign-1 {
+      grid-area: 2 / 1 / span 1 / span 2;
+    }
+  
+    &__pic-3 {
+      grid-area: 3 / 1;
+    }
+  
+    &__pic-4 {
+      grid-area: 3 / 2;
+    }
+  
+    &__sign-2 {
+      grid-area: 4 / 1 / span 1 / span 2;
+    }
+  
+    &__pic-5 {
+      grid-area: 5 / 1;
+    }
+  
+    &__pic-6 {
+      grid-area: 5 / 2;
+    }
+  
+    &__sign-3 {
+      grid-area: 6 / 1 / span 1 / span 2;
+    }
+  }
+
+  @media(max-width: 320px) {
+    & {
+      padding: 64px 20px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+$header-height: 100vh;
+$header-item-height: 24px;
+$top-indent: 26px;
+
+.header {
+  position: relative;
+  height: $header-height;
+  background-image: url("./../images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  &__container {
+    margin: 0 auto;
+    max-width: #{$page-content-width};
+    height: $header-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > * {
+      padding: 0 #{$content-padding};
+    }
+    
+  }
+
+  &__info {
+    display: flex;
+    height: 8%;
+    padding-top: $top-indent;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-icon,
+  &__contacts-icon {
+    width: $header-item-height;
+    height: $header-item-height;
+    cursor: pointer;
+  }
+
+  &__menu-icon {
+    background-image: url("./../images/icons/menu-standard.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__menu-icon,
+  &__logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__menu-icon:hover {
+    background-image: url("./../images/icons/menu-open.svg");
+  }
+
+  &__contacts-icon {
+    height: $header-item-height;
+    position: relative;
+    background-image: url("./../images/icons/phone.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__contacts-icon:hover::before {
+    content: "+ 1 234 555-55-55";
+    position: absolute;
+    right: 20px;
+    width: 140px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: $header-item-height;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__title {
+    position: relative;
+    max-width: 442px;
+    padding-bottom: 80px;
+  }
+
+  &__title::before {
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #fff;
+  }
+
+  &__title-text {
+    min-width: 328px;
+    margin: 24px 0;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -1.5px;
+    text-transform: capitalize;
+    color: #fff;
+  }
+
+  @media(max-width: 768px) {
+    &__info,
+    &__title {
+      padding: 25px 20px 0;
+    }
+  }
+
+  @media(max-width: 320px) {
+    & {
+      padding: 25px 20px 80px;
+    }
+
+    &__container > * {
+      padding: 0;
+    }
+
+    &__logo {
+      width: 78px;
+      height: 45px;
+    }
+
+    &__title {
+      max-width: 280px;
+    }
+
+    &__title-text {
+      font-size: 46px;
+      line-height: 40px;
+      align-items: center;
+      letter-spacing: -1px;
+    }
+  }
+}
+
+.change_icon {
+  background-image: url("./../images/icons/close.svg");
+  background-repeat: no-repeat;
+}
